@@ -122,7 +122,7 @@ class DripGuardViewModel(
                 var rainProb = fallback.rainProb
 
                 val apiKey = BuildConfig.OPENWEATHER_API_KEY
-                if (apiKey.isNotBlank() && apiKey != "your_openweather_api_key_here") {
+                if (apiKey.isNotBlank() && !apiKey.contains("your_")) {
                     try {
                         val currentResp = weatherApiService.getCurrentWeather(cityName.trim(), apiKey)
                         temp = currentResp.main.temp
@@ -201,7 +201,7 @@ class DripGuardViewModel(
                 var rainProb = fallback.rainProb
 
                 val apiKey = BuildConfig.OPENWEATHER_API_KEY
-                if (apiKey.isNotBlank() && apiKey != "your_openweather_api_key_here") {
+                if (apiKey.isNotBlank() && !apiKey.contains("your_")) {
                     try {
                         val currentResp = weatherApiService.getCurrentWeather(cityName.trim(), apiKey)
                         temp = currentResp.main.temp
